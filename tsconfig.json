@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "sourceMap": true,
+      "outDir": "dist",
+      "strict": true,
+      "target": "ES5",
+      "allowJs": true,
+      "rootDir": "src",
+      "moduleResolution": "node",
+      "module": "commonjs",
+      "lib": ["ES6","ES7","DOM","ESNext.AsyncIterable"],
+      "esModuleInterop": true,
+      "noImplicitAny": false
+    },
+    "exclude": ["node_modues","./src/types/graph.d.ts","dist","crawler"]
+}
