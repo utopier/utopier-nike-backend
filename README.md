@@ -120,12 +120,13 @@
    - npm i @prisma/client
    - npm i -D @prisma/cli
 2. []DB Modeling(sqlDBM, ERD)
-3. []Prisma Setting(schema.prisma)
+3. [O]Prisma Setting(schema.prisma)
+    - prisma generate
 
 ## 4. Crwaling(cheerio)
 
-1. []Nike WebSite Crawling
-
+1. [O]Nike WebSite Crawling
+    - npm i cheerio axios
 ## 5. API Dev With Prisma Client
 
 - **passport,passport-local,passport-jwt,jsonwebtoken,bcryptjs**

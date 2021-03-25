@@ -18,6 +18,8 @@
   "dependencies": {
     "@prisma/client": "^2.19.0",
     "apollo-server-express": "^2.21.2",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
     "copy": "^0.3.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
