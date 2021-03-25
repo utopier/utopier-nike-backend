@@ -116,10 +116,10 @@
 
 ## 3. DB Modeling & DB (Prisma, MySQL)
 
-1. [] Install Package
+1. [O] Install Package
    - npm i @prisma/client
    - npm i -D @prisma/cli
-2. []DB Modeling
+2. []DB Modeling(sqlDBM, ERD)
 3. []Prisma Setting(schema.prisma)
 
 ## 4. Crwaling(cheerio)
@@ -133,5 +133,7 @@
 - https://www.prisma.io/docs/concepts/components/prisma-client
 
 ## 6. Build & Depolyment (Heroku)
+
+- npm i rimraf copy
 
 ## 7. API Features

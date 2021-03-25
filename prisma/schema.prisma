@@ -1,0 +1,159 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("CLEARDB_DATABASE_URL")
+}
+
+model cart {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+    userId    Int      @unique
+    productId Int
+    product   product  @relation(fields: [productId], references: [id])
+    user      user     @relation(fields: [userId], references: [id])
+
+    @@index([productId], name: "productId")
+}
+
+model colorcode {
+    id                Int         @id @default(autoincrement())
+    createdAt         DateTime    @default(now())
+    updatedAt         DateTime    @default(now())
+    colorCode         String
+    optionColorImgUrl String
+    productCodeId     Int         @unique
+    productcode       productcode @relation(fields: [productCodeId], references: [id])
+}
+
+model comment {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+    text      String?
+    userId    Int
+    reviewId  Int
+    review    review   @relation(fields: [reviewId], references: [id])
+    user      user     @relation(fields: [userId], references: [id])
+
+    @@index([reviewId], name: "reviewId")
+    @@index([userId], name: "userId")
+}
+
+model descriptionpreview {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+    title     String
+    body      String
+    productId Int      @unique
+    product   product  @relation(fields: [productId], references: [id])
+}
+
+model imageurl {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+    url       String
+    productId Int
+    product   product  @relation(fields: [productId], references: [id])
+
+    @@index([productId], name: "productId")
+}
+
+model product {
+    id                 Int                 @id @default(autoincrement())
+    createdAt          DateTime            @default(now())
+    updatedAt          DateTime            @default(now())
+    title              String
+    subtitle           String
+    price              Int
+    color              String
+    cart               cart[]
+    descriptionpreview descriptionpreview?
+    imageurl           imageurl[]
+    productcode        productcode?
+    productlike        productlike[]
+    review             review[]
+    size               size?
+}
+
+model productcode {
+    id          Int        @id @default(autoincrement())
+    createdAt   DateTime   @default(now())
+    updatedAt   DateTime   @default(now())
+    productCode String
+    productId   Int        @unique
+    product     product    @relation(fields: [productId], references: [id])
+    colorcode   colorcode?
+}
+
+model productlike {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+    userId    Int
+    productId Int
+    product   product  @relation(fields: [productId], references: [id])
+    user      user     @relation(fields: [userId], references: [id])
+
+    @@index([productId], name: "productId")
+    @@index([userId], name: "userId")
+}
+
+model review {
+    id        Int       @id @default(autoincrement())
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @default(now())
+    title     String?
+    body      String?
+    userId    Int
+    productId Int
+    product   product   @relation(fields: [productId], references: [id])
+    user      user      @relation(fields: [userId], references: [id])
+    comment   comment[]
+
+    @@index([productId], name: "productId")
+    @@index([userId], name: "userId")
+}
+
+model size {
+    id         Int      @id @default(autoincrement())
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @default(now())
+    twoThreeZ  Boolean?
+    twoThreeF  Boolean?
+    twoFourZ   Boolean?
+    twoFourF   Boolean?
+    twoFiveZ   Boolean?
+    twoFiveF   Boolean?
+    twoSixZ    Boolean?
+    twoSixF    Boolean?
+    twoSevenZ  Boolean?
+    twoSevenF  Boolean?
+    twoEightZ  Boolean?
+    twoEightF  Boolean?
+    twoNineZ   Boolean?
+    twoNineF   Boolean?
+    threeZeroZ Boolean?
+    threeZeroF Boolean?
+    threeOneZ  Boolean?
+    productId  Int      @unique
+    product    product  @relation(fields: [productId], references: [id])
+}
+
+model user {
+    id          Int           @id @default(autoincrement())
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @default(now())
+    username    String        @unique
+    email       String        @unique
+    password    String?
+    cart        cart?
+    comment     comment[]
+    productlike productlike[]
+    review      review[]
+}
