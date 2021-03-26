@@ -144,9 +144,12 @@
    - [O] login
    - [O] me
    - [O] editProfile
+
+- [O] Crawling Nike Web Site
+
 2. Product
-   - [] getProducts
-   - [] getProduct
+   - [O] getProducts
+   - [O] getProduct
    - [] searchProduct
 3. Like
    - [] toggledLike

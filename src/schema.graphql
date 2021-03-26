@@ -1,11 +1,29 @@
 type Query {
   me: User!
+  getProduct(id: String!): Product!
+  getProducts(
+    filter: String
+    skip: Int
+    take: Int
+    orderBy: ProductsOrderByInput
+  ): [Product!]!
+  searchProduct(term: String!): [Product!]!
 }
 
 type Mutation {
   signUp(username: String!, email: String!, password: String!): AuthPayload
   editProfile(username: String): User!
   login(email: String!, password: String!): AuthPayload
+}
+
+input ProductsOrderByInput {
+  createdAt: Sort
+  price: Sort
+}
+
+enum Sort {
+  asc
+  desc
 }
 
 type AuthPayload {

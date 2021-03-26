@@ -1,0 +1,18 @@
+type Query {
+  getProducts(
+    filter: String
+    skip: Int
+    take: Int
+    orderBy: ProductsOrderByInput
+  ): [Product!]!
+}
+
+input ProductsOrderByInput {
+  createdAt: Sort
+  price: Sort
+}
+
+enum Sort {
+  asc
+  desc
+}
