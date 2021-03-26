@@ -121,12 +121,12 @@
    - npm i -D @prisma/cli
 2. []DB Modeling(sqlDBM, ERD)
 3. [O]Prisma Setting(schema.prisma)
-    - prisma generate
+   - prisma generate
 
 ## 4. Crwaling(cheerio)
 
 1. [O]Nike WebSite Crawling
-    - npm i cheerio axios
+   - npm i cheerio axios
 
 ## 5. API Dev With Prisma Client
 
@@ -135,39 +135,38 @@
 - https://www.prisma.io/docs/concepts/components/prisma-client
 
 - TestTools
-    - Graphql Play Ground
-    - MySQL Workbench
-    - Apollo Studio Expoloer
+  - Graphql Play Ground
+  - MySQL Workbench
+  - Apollo Studio Expoloer
 
 1. User
-    - [] signUp
-    - [] login
-    - [] me
-    - [] editProfile
+   - [O] signUp
+   - [O] login
+   - [O] me
+   - [O] editProfile
 2. Product
-    - [] getProducts
-    - [] getProduct
-    - [] searchProduct
+   - [] getProducts
+   - [] getProduct
+   - [] searchProduct
 3. Like
-    - [] toggledLike
-    - [] toggleLike
+   - [] toggledLike
+   - [] toggleLike
 4. Cart
-    - [] createProductInCart
-    - [] deleteProductInCart
-    - [] getCart
+   - [] createProductInCart
+   - [] deleteProductInCart
+   - [] getCart
 5. Review
-    - [] getReviews
-    - [] getReview
-    - [] createReview
-    - [] deleteReview
-    - [] updateReview
+   - [] getReviews
+   - [] getReview
+   - [] createReview
+   - [] deleteReview
+   - [] updateReview
 6. Comment
-    - [] createComment
-    - [] deleteComment
-    - [] getComments
-    - [] getComment
-    - [] updateComment
-
+   - [] createComment
+   - [] deleteComment
+   - [] getComments
+   - [] getComment
+   - [] updateComment
 
 ## 6. Build & Depolyment (Heroku)
 

@@ -1,9 +1,11 @@
 type Query {
-  test: String;
+  me: User!
 }
 
 type Mutation {
   signUp(username: String!, email: String!, password: String!): AuthPayload
+  editProfile(username: String): User!
+  login(email: String!, password: String!): AuthPayload
 }
 
 type AuthPayload {
@@ -11,4 +13,134 @@ type AuthPayload {
   user: User
   token: String
   user: User
+}
+
+type User {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  username: String!
+  email: String!
+  password: String!
+  cart: Cart
+  likes: [Like!]!
+  reviews: [Review!]!
+  comments: [Comment!]!
+}
+
+type ProductCode {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  productCode: String
+  styleCode: [ColorCode]
+}
+
+type ColorCode {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  colorCode: String
+  optionColorImgUrl: String
+  productCode: ProductCode
+}
+
+type ImageUrl {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  url: String
+  product: Product
+}
+
+type Size {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  twoThreeZ: Boolean
+  twoThreeF: Boolean
+  twoFourZ: Boolean
+  twoFourF: Boolean
+  twoFiveZ: Boolean
+  twoFiveF: Boolean
+  twoSixZ: Boolean
+  twoSixF: Boolean
+  twoSevenZ: Boolean
+  twoSevenF: Boolean
+  twoEightZ: Boolean
+  twoEightF: Boolean
+  twoNineZ: Boolean
+  twoNineF: Boolean
+  threeZeroZ: Boolean
+  threeZeroF: Boolean
+  threeOneZ: Boolean
+  product: Product
+}
+
+type DescriptionPreview {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  title: String
+  body: String
+  product: Product
+}
+
+type Product {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  title: String!
+  subtitle: String!
+  price: String!
+  color: String
+  imageUrls: [ImageUrl]
+  sizes: Size
+  descriptionPreview: DescriptionPreview
+  productCode: ProductCode
+  likes: [Like!]!
+  reviews: [Review!]!
+  # ##
+  isLiked: Boolean!
+  likeCount: Int!
+  reviewCount: Int!
+}
+
+type Review {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  title: String!
+  body: String!
+  user: User
+  product: Product
+  comments: [Comment!]!
+  commentCount: Int!
+}
+
+type Comment {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  text: String!
+  user: User
+  review: Review
+}
+
+type Cart {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  user: User!
+  products: [Product!]!
+  # ##
+  productCount: Int!
+}
+
+type Like {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  user: User
+  product: Product
 }

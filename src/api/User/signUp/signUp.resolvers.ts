@@ -4,9 +4,6 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
 export default {
-  Query:{
-    test: () => 'test'
-  },
   Mutation: {
     signUp: async (_, args) => {
       const { username, email } = args;

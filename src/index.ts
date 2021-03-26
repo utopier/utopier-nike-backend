@@ -8,9 +8,9 @@ import dotenv from 'dotenv';
 import path from 'path';
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
-// import './passport';
-// import  authenticateJwt  from './passport';
-// import  {isAuthenticated}  from './middlewares';
+import './passport';
+import  authenticateJwt  from './passport';
+import  {isAuthenticated}  from './middlewares';
 
 import events from 'events';
 events.EventEmitter.defaultMaxListeners = 20;
@@ -20,7 +20,7 @@ const server = new ApolloServer({
   schema,
   context: ({ req: request }) => ({ 
       request, 
-    //   isAuthenticated, 
+      isAuthenticated, 
       pubsub }),
   tracing: true,
   playground:true,
@@ -34,7 +34,7 @@ const app = express();
 
 app.use(cors());
 app.use(logger('dev'));
-// app.use(authenticateJwt);
+app.use(authenticateJwt);
 
 server.applyMiddleware({ app, path: '/graphql' });
 
