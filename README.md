@@ -127,14 +127,48 @@
 
 1. [O]Nike WebSite Crawling
     - npm i cheerio axios
+
 ## 5. API Dev With Prisma Client
 
 - **passport,passport-local,passport-jwt,jsonwebtoken,bcryptjs**
 - **multer, multer-s3**
 - https://www.prisma.io/docs/concepts/components/prisma-client
 
+- TestTools
+    - Graphql Play Ground
+    - MySQL Workbench
+    - Apollo Studio Expoloer
+
+1. User
+    - [] signUp
+    - [] login
+    - [] me
+    - [] editProfile
+2. Product
+    - [] getProducts
+    - [] getProduct
+    - [] searchProduct
+3. Like
+    - [] toggledLike
+    - [] toggleLike
+4. Cart
+    - [] createProductInCart
+    - [] deleteProductInCart
+    - [] getCart
+5. Review
+    - [] getReviews
+    - [] getReview
+    - [] createReview
+    - [] deleteReview
+    - [] updateReview
+6. Comment
+    - [] createComment
+    - [] deleteComment
+    - [] getComments
+    - [] getComment
+    - [] updateComment
+
+
 ## 6. Build & Depolyment (Heroku)
 
 - npm i rimraf copy
-
-## 7. API Features
