@@ -1,0 +1,21 @@
+type Mutation {
+  toggleLike(productId: String!): toggledLikeResponse!
+}
+
+type toggledLikeResponse {
+  status: Toggled
+  like: toggledLikeResponseLike
+}
+
+enum Toggled {
+  added
+  deleted
+}
+
+type toggledLikeResponseLike {
+  id: ID
+  createAt: String
+  updatedAt: String
+  userId: ID
+  productId: ID
+}

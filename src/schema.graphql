@@ -14,6 +14,38 @@ type Mutation {
   signUp(username: String!, email: String!, password: String!): AuthPayload
   editProfile(username: String): User!
   login(email: String!, password: String!): AuthPayload
+  toggleLike(productId: String!): toggledLikeResponse!
+}
+
+type Subscription {
+  toggledLike: toggledLikeResponse
+}
+
+type toggledLikeResponse {
+  status: Toggled
+  like: toggledLikeResponseLike
+  status: Toggled
+  like: toggledLikeResponseLike
+}
+
+enum Toggled {
+  added
+  deleted
+  added
+  deleted
+}
+
+type toggledLikeResponseLike {
+  id: ID
+  createAt: String
+  updatedAt: String
+  userId: ID
+  productId: ID
+  id: ID
+  createAt: String
+  updatedAt: String
+  userId: ID
+  productId: ID
 }
 
 input ProductsOrderByInput {

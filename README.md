@@ -152,8 +152,8 @@
    - [O] getProduct
    - [] searchProduct
 3. Like
-   - [] toggledLike
-   - [] toggleLike
+   - [O] toggledLike
+   - [O] toggleLike
 4. Cart
    - [] createProductInCart
    - [] deleteProductInCart
