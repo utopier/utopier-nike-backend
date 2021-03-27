@@ -8,6 +8,7 @@ type Query {
     orderBy: ProductsOrderByInput
   ): [Product!]!
   searchProduct(term: String!): [Product!]!
+  getCart: Cart
 }
 
 type Mutation {
@@ -15,10 +16,40 @@ type Mutation {
   editProfile(username: String): User!
   login(email: String!, password: String!): AuthPayload
   toggleLike(productId: String!): toggledLikeResponse!
+  createProductInCart(productId: String): CreatedProductInCartResponse
+  createReview(title: String!, body: String!, productId: String!): Review!
+  updateReview(
+    reviewId: String
+    username: String
+    title: String
+    body: String
+  ): Boolean
+  deleteReview(reviewId: String, username: String): Boolean
 }
 
 type Subscription {
   toggledLike: toggledLikeResponse
+}
+
+type CreatedProductInCartResponse {
+  id: ID
+  createdAt: String
+  updatedAt: String
+  title: String
+  subtitle: String
+  price: String
+  color: String
+  sizeId: ID
+  productCodeId: Int
+  imageUrls: [CreatedProductInCartResponseImgUrl]
+}
+
+type CreatedProductInCartResponseImgUrl {
+  id: ID
+  createdAt: String
+  updatedAt: String
+  url: String
+  productId: ID
 }
 
 type toggledLikeResponse {

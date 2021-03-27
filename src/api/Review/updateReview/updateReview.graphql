@@ -1,0 +1,8 @@
+type Mutation {
+  updateReview(
+    reviewId: String
+    username: String
+    title: String
+    body: String
+  ): Boolean
+}

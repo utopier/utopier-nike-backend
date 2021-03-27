@@ -154,22 +154,24 @@
 3. Like
    - [O] toggledLike
    - [O] toggleLike
-4. Cart
-   - [] createProductInCart
-   - [] deleteProductInCart
-   - [] getCart
-5. Review
-   - [] getReviews
-   - [] getReview
-   - [] createReview
-   - [] deleteReview
-   - [] updateReview
-6. Comment
+4. Review
+   - [O] createReview
+   - [O] updateReview
+   - [O] deleteReview
+   - [O] getReviews
+   - [O] getReview
+5. Comment
    - [] createComment
    - [] deleteComment
    - [] getComments
    - [] getComment
    - [] updateComment
+6. Cart
+   - [] createProductInCart
+   - [] deleteProductInCart
+   - [] getCart
+
+id +10
 
 ## 6. Build & Depolyment (Heroku)
 

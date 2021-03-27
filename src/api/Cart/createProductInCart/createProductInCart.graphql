@@ -1,0 +1,24 @@
+type Mutation {
+  createProductInCart(productId: String): CreatedProductInCartResponse
+}
+
+type CreatedProductInCartResponse {
+  id: ID
+  createdAt: String
+  updatedAt: String
+  title: String
+  subtitle: String
+  price: String
+  color: String
+  sizeId: ID
+  productCodeId: Int
+  imageUrls: [CreatedProductInCartResponseImgUrl]
+}
+
+type CreatedProductInCartResponseImgUrl {
+  id: ID
+  createdAt: String
+  updatedAt: String
+  url: String
+  productId: ID
+}
