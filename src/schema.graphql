@@ -9,6 +9,8 @@ type Query {
   ): [Product!]!
   searchProduct(term: String!): [Product!]!
   getCart: Cart
+  getComments(reviewId: String): [Comment]
+  getComment(commentId: String): Comment
 }
 
 type Mutation {
@@ -25,6 +27,9 @@ type Mutation {
     body: String
   ): Boolean
   deleteReview(reviewId: String, username: String): Boolean
+  createComment(reviewId: String, text: String): Comment
+  updateComment(commentId: String, username: String, text: String): Comment
+  deleteComment(commentId: String, username: String): Boolean
 }
 
 type Subscription {

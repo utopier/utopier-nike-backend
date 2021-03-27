@@ -161,11 +161,11 @@
    - [O] getReviews
    - [O] getReview
 5. Comment
-   - [] createComment
-   - [] deleteComment
-   - [] getComments
-   - [] getComment
-   - [] updateComment
+   - [O] createComment
+   - [O] deleteComment
+   - [O] getComments
+   - [O] getComment
+   - [O] updateComment
 6. Cart
    - [] createProductInCart
    - [] deleteProductInCart
