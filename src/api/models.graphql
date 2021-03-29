@@ -5,10 +5,10 @@ type User {
   username: String!
   email: String!
   password: String!
-  cart: Cart
-  likes: [Like!]!
-  reviews: [Review!]!
-  comments: [Comment!]!
+  cart: [Cart]
+  likes: [Like]
+  reviews: [Review]
+  comments: [Comment]
 }
 
 type ProductCode {
@@ -108,7 +108,6 @@ type Comment {
   text: String!
   user: User
   review: Review
-  ###
 }
 
 type Cart {
@@ -116,9 +115,7 @@ type Cart {
   createdAt: String
   updatedAt: String
   user: User!
-  products: [Product!]!
-  ###
-  productCount: Int!
+  product: Product!
 }
 
 type Like {

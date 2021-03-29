@@ -7,9 +7,9 @@ export default {
       isAuthenticated(request);
       const { user } = request;
       // user.id === cart.id
-      return prisma.cart.findFirst({
+      return await prisma.cart.findMany({
         where: {
-          id: user.id,
+          userId: user.id
         },
       });
     },

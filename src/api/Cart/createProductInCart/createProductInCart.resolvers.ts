@@ -36,7 +36,7 @@ export default {
         // }
       });
       console.log('newProductInCart : ',newProductInCart)
-      return newProductInCart.product[0];
+      return newProductInCart;
     },
   },
 };

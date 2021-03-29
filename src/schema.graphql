@@ -1,5 +1,5 @@
 type Query {
-  me: User!
+  me: User
   getProduct(id: String!): Product!
   getProducts(
     filter: String
@@ -8,7 +8,7 @@ type Query {
     orderBy: ProductsOrderByInput
   ): [Product!]!
   searchProduct(term: String!): [Product!]!
-  getCart: Cart
+  getCart: [Cart]
   getComments(reviewId: String): [Comment]
   getComment(commentId: String): Comment
 }
@@ -30,6 +30,7 @@ type Mutation {
   createComment(reviewId: String, text: String): Comment
   updateComment(commentId: String, username: String, text: String): Comment
   deleteComment(commentId: String, username: String): Boolean
+  deleteProductInCart(cartId: String): Boolean
 }
 
 type Subscription {
@@ -108,10 +109,10 @@ type User {
   username: String!
   email: String!
   password: String!
-  cart: Cart
-  likes: [Like!]!
-  reviews: [Review!]!
-  comments: [Comment!]!
+  cart: [Cart]
+  likes: [Like]
+  reviews: [Review]
+  comments: [Comment]
 }
 
 type ProductCode {
@@ -218,9 +219,7 @@ type Cart {
   createdAt: String
   updatedAt: String
   user: User!
-  products: [Product!]!
-  # ##
-  productCount: Int!
+  product: Product!
 }
 
 type Like {
