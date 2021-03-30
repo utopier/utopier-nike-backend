@@ -81,8 +81,8 @@ type Product {
   sizes: Size
   descriptionPreview: DescriptionPreview
   productCode: ProductCode
-  likes: [Like!]!
-  reviews: [Review!]!
+  likes: [Like]
+  reviews: [Review]
   ###
   isLiked: Boolean!
   likeCount: Int!
