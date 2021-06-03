@@ -15,12 +15,14 @@ export default {
               connect:{id: +request.user.id}
           }
         },
-        include:{
+        select:{
+          id:true,
           product:{
             select:{
-              imageurl:{
-                take:1
-              }
+              price: true,
+              imageurl: true,
+              title: true,
+              subtitle: true
             }
           }
         }
@@ -35,8 +37,14 @@ export default {
         //   }
         // }
       });
+      newProductInCart.product['imageUrls'] = newProductInCart.product['imageurl']
+      const {imageurl, ...withoutImageurlData} = newProductInCart.product
+
       console.log('newProductInCart : ',newProductInCart)
-      return newProductInCart;
+      return {
+        id: newProductInCart.id,
+        product: withoutImageurlData
+      };
     },
   },
 };

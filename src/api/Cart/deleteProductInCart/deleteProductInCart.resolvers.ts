@@ -7,6 +7,7 @@ export default {
       isAuthenticated(request);
       const { user } = request;
       const { cartId, productId } = args;
+      console.log('deleteProductInCart');
       try {
         await prisma.cart.delete({
           where:{

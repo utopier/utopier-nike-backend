@@ -32,7 +32,10 @@ const server = new ApolloServer({
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' ? 'https://utopier.github.io/' : true,
+  credentials: true
+}));
 app.use(logger('dev'));
 app.use(authenticateJwt);
 

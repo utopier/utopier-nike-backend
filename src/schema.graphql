@@ -39,6 +39,11 @@ type Subscription {
 
 type CreatedProductInCartResponse {
   id: ID
+  product: CartProduct
+}
+
+type CartProduct {
+  id: ID
   createdAt: String
   updatedAt: String
   title: String
