@@ -6,7 +6,7 @@ const main = async () => {
   try {
     //index : 0 ~ 40 , ex : productFunc(0)
     // 0~33
-    const data = await productFunc(33);
+    const data = await productFunc(35);
     console.log('data : ', data);
     const {
       title,
