@@ -1,6 +1,6 @@
 # Nike Clone API
 
-- **URL** : https://utopier.github.io/utopier-nike-frontend
+- **URL** : https://utopier-nike-backend.herokuapp.com/graphql
 - **Feature Video List** : https://www.youtube.com/playlist?list=PLshiIDc3Xos1ZKZ7kXDgkKMGLr2gZNj0d
 - **Repository**
   - Frontend Repository : https://github.com/utopier/utopier-nike-backend
