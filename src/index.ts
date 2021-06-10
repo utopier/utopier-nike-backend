@@ -34,8 +34,8 @@ const app = express();
 
 // app.options('*',cors());
 app.use(cors({
-  // origin: process.env.NODE_ENV === 'production' ? 'https://utopier.github.io' : true,
-  origin: true,
+  origin: process.env.NODE_ENV === 'production' ? 'https://utopier.github.io' : true,
+  // origin: true,
   credentials: true,
 }));
 // app.use(cors());
