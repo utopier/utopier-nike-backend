@@ -12,6 +12,9 @@
     "build": "tsc",
     "postbuild": "copy ./src/api/**/*.graphql ./dist/api"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
