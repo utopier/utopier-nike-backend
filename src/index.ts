@@ -37,6 +37,11 @@ app.use(cors({
   origin: true,
   credentials: true,
 }));
+app.use(function(req, res, next){
+  console.log('custom logger req : ', req);
+  console.log('cusotm looger res : ', res);
+  next();
+})
 app.use(logger('dev'));
 app.use(authenticateJwt);
 
