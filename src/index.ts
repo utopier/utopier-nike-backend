@@ -42,7 +42,7 @@ app.use(cors({
 app.use(logger('dev'));
 app.use(authenticateJwt);
 
-server.applyMiddleware({ app, path: '/graphql' });
+server.applyMiddleware({ app, cors: true, path: '/graphql' });
 
 const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
