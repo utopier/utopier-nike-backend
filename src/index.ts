@@ -18,10 +18,14 @@ events.EventEmitter.defaultMaxListeners = 20;
 const pubsub = new PubSub();
 const server = new ApolloServer({
   schema,
-  context: ({ req: request }) => ({ 
+  context: ({ req: request,res,connection }) => {
+    console.log('ApolloServer context res : ', res);
+    console.log('ApolloServer context connection connection : ', connection);
+    return {
       request, 
       isAuthenticated, 
-      pubsub }),
+      pubsub }
+    },
   tracing: true,
   playground:true,
   introspection:true,
@@ -37,11 +41,12 @@ app.use(cors({
   origin: true,
   credentials: true,
 }));
-app.use(function(req, res, next){
-  console.log('custom logger req : ', req);
-  console.log('cusotm looger res : ', res);
-  next();
-})
+// ----- Custom Logger ------ //
+// app.use(function(req, res, next){
+//   console.log('custom logger req : ', req);
+//   console.log('cusotm looger res : ', res);
+//   next();
+// })
 app.use(logger('dev'));
 app.use(authenticateJwt);
 
