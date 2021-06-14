@@ -49,10 +49,13 @@ app.use(cors({
 app.use(logger('dev'));
 app.use(authenticateJwt);
 
-server.applyMiddleware({ app, path: '/graphql' });
+server.applyMiddleware({ 
+  app, 
+  path: '/' 
+  });
 
 const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
 httpServer.listen({ port: process.env.PORT || 4000 }, () =>
-  console.log(`Server Start http://localhost:${process.env.PORT || 4000}/graphql`)
+  console.log(`Server Start http://localhost:${process.env.PORT || 4000}${server.graphqlPath}`)
 );
