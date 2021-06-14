@@ -12,8 +12,8 @@ import './passport';
 import  authenticateJwt  from './passport';
 import  {isAuthenticated}  from './middlewares';
 
-import events from 'events';
-events.EventEmitter.defaultMaxListeners = 20;
+// import events from 'events';
+// events.EventEmitter.defaultMaxListeners = 20;
 
 const pubsub = new PubSub();
 const server = new ApolloServer({
@@ -32,7 +32,6 @@ const server = new ApolloServer({
   logger,
   debug:true,
 });
-
 
 const app = express();
 
